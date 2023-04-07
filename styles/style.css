@@ -1,0 +1,133 @@
+body {
+  background: #f0ece2;
+}
+
+.body-container {
+  max-width: 450px;
+  margin: 30px auto;
+  border: 2px solid rgb(186, 186, 186);
+  border-radius: 10px;
+  background: #d3e5fa;
+  font-family: "Kalam", cursive;
+}
+
+.header-container-navigation {
+  margin: 10px 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.header-container-navigation button {
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  margin: 2px;
+}
+
+.header-container-navigation #current-submit {
+  border: 2px solid #5186bb;
+  background: rgba(160, 205, 250, 0.6);
+}
+
+.header-container-navigation #current-submit:hover {
+  background: #5490d4;
+  color: azure;
+}
+
+.header-container-navigation #search-submit {
+  border: 2px solid #82ac59;
+  background: rgba(183, 228, 140, 0.6);
+}
+
+.header-container-navigation #search-submit:hover {
+  background: #608635;
+  color: azure;
+}
+::placeholder {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.header-container-navigation .search-area {
+  padding: 5px 40px 5px 5px;
+  background-color: rgba(230, 230, 230, 0.6);
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+hr {
+  margin: 5px;
+}
+
+.data-container {
+  padding-bottom: 30px;
+}
+
+.data-container h1 {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.data-container h2 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.data-container h3 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.data-container .right-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.data-container .right-heading {
+  text-align: end;
+}
+.data-container .emoji-bar,
+.temperature-bar {
+  font-size: 45px;
+  margin: 0 3px;
+}
+
+.data-container .units {
+  font-size: 14px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+.data-container .units a {
+  text-decoration: none;
+}
+
+.forecast-container {
+  margin: 10px 8px;
+}
+.forecast-container .col {
+  text-align: center;
+  padding: 0 8px;
+}
+
+.forecast-container h4 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 3px;
+}
+
+.forecast-container h5 {
+  font-size: 14px;
+}
+
+.forecast-container .low-temperature {
+  opacity: 0.6;
+}
+
+.forecast-container h6 {
+  font-size: 30px;
+}
