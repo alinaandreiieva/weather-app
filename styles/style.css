@@ -103,8 +103,13 @@ hr {
   padding-top: 5px;
 }
 
-.data-container .units a {
+.data-container .unit-link {
+  cursor: default;
   text-decoration: none;
+}
+
+.data-container .unit-link:active {
+  color: rgb(33, 33, 33);
 }
 
 .forecast-container {
