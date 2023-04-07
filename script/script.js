@@ -56,6 +56,11 @@ function searchForm(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function seachCity(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
 let searchCityForm = document.querySelector("#search-submit");
 searchCityForm.addEventListener("click", searchForm);
 
@@ -70,3 +75,5 @@ let currentButton = document.querySelector("#current-submit");
 currentButton.addEventListener("click", function () {
   navigator.geolocation.getCurrentPosition(showPosition);
 });
+
+seachCity("Krakow");
