@@ -4,7 +4,7 @@ body {
 
 .body-container {
   max-width: 450px;
-  margin: 30px auto;
+  margin: 30px auto 10px;
   border: 2px solid rgb(186, 186, 186);
   border-radius: 10px;
   background: #d3e5fa;
@@ -130,4 +130,10 @@ hr {
 
 .forecast-container h6 {
   font-size: 30px;
+}
+
+.footer {
+  max-width: 450px;
+  margin: 0 auto;
+  font-size: 10px;
 }
