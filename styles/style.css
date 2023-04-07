@@ -9,6 +9,7 @@ body {
   border-radius: 10px;
   background: #d3e5fa;
   font-family: "Kalam", cursive;
+  box-shadow: 1px 1px 20px 12px rgba(0, 0, 0, 0.1);
 }
 
 .header-container-navigation {
