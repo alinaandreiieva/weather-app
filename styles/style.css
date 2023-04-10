@@ -46,6 +46,7 @@ body {
   background: #608635;
   color: azure;
 }
+
 ::placeholder {
   font-size: 14px;
   font-style: italic;
@@ -91,8 +92,13 @@ hr {
 .data-container .right-heading {
   text-align: end;
 }
-.data-container .emoji-bar,
-.temperature-bar {
+
+.main-icon {
+  height: 65px;
+  width: 65px;
+}
+
+.data-container .temperature-bar {
   font-size: 45px;
   margin: 0 3px;
 }

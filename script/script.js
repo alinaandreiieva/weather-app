@@ -42,8 +42,12 @@ function showWeather(response) {
     "#feels_like"
   ).innerHTML = `Feels like: ${feelsLikeTemp}`;
 
-  //let iconElement = document.querySelector("#icon");
-  //iconElement.setAttribute("src", ``);
+  console.log(response);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 
   document.querySelector("#city").innerHTML = response.data.city;
 }
