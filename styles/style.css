@@ -109,14 +109,14 @@ hr {
   padding-top: 5px;
 }
 
-.data-container .unit-container {
+.data-container .active {
   cursor: default;
-  text-decoration: none;
-  color: #000;
+  color: black;
 }
 
-.data-container .unit-container:active {
-  color: rgb(139, 138, 138);
+.data-container #celsius-unit,
+#fahrenheit-unit {
+  text-decoration: none;
 }
 
 .forecast-container {

@@ -31,9 +31,10 @@ currentDateOutput.innerHTML = `${currentDay} ${currentDate} ${currentMonth}`;
 currentTimeOutput.innerHTML = `${currentHour}:${currentMinute}`;
 
 function showWeather(response) {
-  document.querySelector("#temperature-bar").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  celsiusTemperature = response.data.temperature.current;
+
+  document.querySelector("#temperature-bar").innerHTML =
+    Math.round(celsiusTemperature);
   document.querySelector("#weather-description").innerHTML =
     response.data.condition.description;
 
@@ -84,3 +85,29 @@ currentButton.addEventListener("click", function () {
 });
 
 seachCity("Krakow");
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  convertUnitToCelsius.classList.remove("active");
+  convertUnitToFahrenheit.classList.add("active");
+
+  let celsiusUnit = document.querySelector("#temperature-bar");
+  let fahrenheitUnit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  celsiusUnit.innerHTML = fahrenheitUnit;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  convertUnitToCelsius.classList.add("active");
+  convertUnitToFahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature-bar");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let convertUnitToCelsius = document.querySelector("#celsius-unit");
+convertUnitToCelsius.addEventListener("click", convertToCelsius);
+
+let convertUnitToFahrenheit = document.querySelector("#fahrenheit-unit");
+convertUnitToFahrenheit.addEventListener("click", convertToFahrenheit);
