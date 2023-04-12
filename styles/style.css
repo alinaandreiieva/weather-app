@@ -128,21 +128,22 @@ hr {
   padding: 0 8px;
 }
 
-.forecast-container h4 {
+.forecast-container .forecast-day {
   font-size: 18px;
   font-weight: 400;
   margin: 3px;
 }
 
-.forecast-container h5 {
+.forecast-temperature .max-temperature {
   font-size: 14px;
 }
 
-.forecast-container .low-temperature {
+.forecast-temperature .low-temperature {
+  font-size: 14px;
   opacity: 0.6;
 }
 
-.forecast-container h6 {
+.forecast-container .forecast-image {
   font-size: 30px;
 }
 

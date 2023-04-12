@@ -32,7 +32,6 @@ currentTimeOutput.innerHTML = `${currentHour}:${currentMinute}`;
 
 function showWeather(response) {
   celsiusTemperature = response.data.temperature.current;
-
   document.querySelector("#temperature-bar").innerHTML =
     Math.round(celsiusTemperature);
   document.querySelector("#weather-description").innerHTML =
