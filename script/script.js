@@ -75,13 +75,21 @@ function showWeather(response) {
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#temperature-bar").innerHTML =
     Math.round(celsiusTemperature);
+  let description = response.data.condition.description;
+  descriptionCapitalized =
+    description.charAt(0).toUpperCase() + description.slice(1);
   document.querySelector("#weather-description").innerHTML =
-    response.data.condition.description;
+    descriptionCapitalized;
 
   let feelsLikeTemp = Math.round(response.data.temperature.feels_like);
   document.querySelector(
     "#feels_like"
-  ).innerHTML = `Feels like: ${feelsLikeTemp}`;
+  ).innerHTML = `Feels like: ${feelsLikeTemp}°`;
+
+  let windSpeed = Math.round(response.data.wind.speed);
+  document.querySelector(
+    "#wind-speed"
+  ).innerHTML = `Wind speed: ${windSpeed} km/h`;
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
