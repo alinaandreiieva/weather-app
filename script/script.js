@@ -30,7 +30,9 @@ if (currentMinute < 10) {
 currentDateOutput.innerHTML = `${currentDay} ${currentDate} ${currentMonth}`;
 currentTimeOutput.innerHTML = `${currentHour}:${currentMinute}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
+
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
@@ -48,6 +50,11 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecastDaily(coorinates) {
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coorinates.longitude}&lat=${coorinates.latitude}&key=${apiKey}`;
+  axios(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
@@ -71,6 +78,8 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 
   document.querySelector("#city").innerHTML = response.data.city;
+
+  getForecastDaily(response.data.coordinates);
 }
 
 let apiKey = "cfcd0o2e4cf5f2899e2b3c0ae3bc56dt";
@@ -130,5 +139,3 @@ let convertUnitToFahrenheit = document.querySelector("#fahrenheit-unit");
 convertUnitToFahrenheit.addEventListener("click", convertToFahrenheit);
 
 seachCity("Krakow");
-
-displayForecast();
