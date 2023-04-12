@@ -123,15 +123,18 @@ hr {
   margin: 10px 0;
 }
 
+.forecast-container .row {
+  margin: 0;
+}
+
 .forecast-container .col {
   text-align: center;
-  padding: 0 8px;
+  padding: 0;
 }
 
 .forecast-container .forecast-day {
   font-size: 18px;
   font-weight: 400;
-  margin: 3px;
 }
 
 .forecast-temperature .max-temperature {
@@ -144,7 +147,8 @@ hr {
 }
 
 .forecast-container .forecast-image {
-  font-size: 30px;
+  width: 65px;
+  height: 65px;
 }
 
 .footer {
