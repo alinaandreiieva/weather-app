@@ -30,6 +30,26 @@ if (currentMinute < 10) {
 currentDateOutput.innerHTML = `${currentDay} ${currentDate} ${currentMonth}`;
 currentTimeOutput.innerHTML = `${currentHour}:${currentMinute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col">
+            <div class="forecast-day">${day}</div>
+            <div class="forecast-temperature">
+              <span class="max-temperature">10°</span>
+              <span class="low-temperature"> 7°</span>
+            </div>
+            <div class="forecast-image">🌧️</div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#temperature-bar").innerHTML =
@@ -83,8 +103,6 @@ currentButton.addEventListener("click", function () {
   navigator.geolocation.getCurrentPosition(showPosition);
 });
 
-seachCity("Krakow");
-
 function convertToFahrenheit(event) {
   event.preventDefault();
   convertUnitToCelsius.classList.remove("active");
@@ -110,3 +128,7 @@ convertUnitToCelsius.addEventListener("click", convertToCelsius);
 
 let convertUnitToFahrenheit = document.querySelector("#fahrenheit-unit");
 convertUnitToFahrenheit.addEventListener("click", convertToFahrenheit);
+
+seachCity("Krakow");
+
+displayForecast();
